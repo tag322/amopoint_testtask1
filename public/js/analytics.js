@@ -1,5 +1,5 @@
 // получаем инфу о локации, потом шлем на бэк
-fetch('http://ip-api.com/json/')
+fetch('/api/geo')
     .then(response => response.json())
     .then(data => {
         if (data.status !== 'success') return;
