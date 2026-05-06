@@ -9,6 +9,14 @@
 </head>
 <body>
 
+<header>
+    <h1>Аналитика посещений</h1>
+    <form method="POST" action="/logout">
+        @csrf
+        <button type="submit" style="background:none;border:none;cursor:pointer;color:#fff;font-size:.9rem;opacity:.85;">Выйти</button>
+    </form>
+</header>
+
 <div class="container">
     <div class="card">
         <div class="controls">
