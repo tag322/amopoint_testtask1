@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AnalyticsController;
 use App\Http\Controllers\AnalyticsDashboardController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\UserApiExampleController;
 
 Route::get('/', function () {
     return view('testpage');
@@ -22,6 +23,8 @@ Route::middleware('auth')->group(function () {
 
 // трекинг без csrf, подключается на любой сайт
 Route::post('/api/analytics/track', [AnalyticsController::class, 'track']);
+
+Route::get('/api/users', [UserApiExampleController::class, 'index']);
 
 // простой прокси для ip-api, ибо они по дефолту не отдают данные по https. Ну и т.к. фронт на httos - http запрос не проходит             
 Route::get('/api/geo', function () {
