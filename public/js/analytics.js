@@ -1,10 +1,10 @@
 // получаем инфу о локации, потом шлем на бэк
-fetch('/api/geo')
+fetch('https://cg76250.tw1.ru/api/geo')
     .then(response => response.json())
     .then(data => {
         if (data.status !== 'success') return;
 
-        fetch('/api/analytics/track', {
+        fetch('https://cg76250.tw1.ru/api/analytics/track', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
