@@ -10,6 +10,11 @@ class UserApiExampleController extends Controller
     {
         $users = UserApiExample::with('posts')->get();
 
-        return response()->json($users);
+        $lastUpdatedAt = $users->max('updated_at');
+
+        return response()->json([
+            'last_updated_at' => $lastUpdatedAt,
+            'data' => $users,
+        ]);
     }
 }
